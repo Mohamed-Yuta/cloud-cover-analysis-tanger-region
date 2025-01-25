@@ -61,23 +61,6 @@ Filtered the dataset to include only scenes within this bounding box.
 
 ---
 
-## Recommendations
-
-### For Further Analysis
-1. **Obtain Surface Reflectance Data**:
-   - Download Landsat Level-2 data from USGS Earth Explorer.
-   - Ensure the dataset includes bands for NDVI or NDBI calculation.
-
-2. **Google Earth Engine**:
-   - Use GEE to calculate NDVI or NDBI for multiple years and perform temporal analysis.
-
-3. **Incorporate Shapefiles**:
-   - Use a shapefile for precise geographic filtering and visualization.
-
-### Possible Enhancements
-- Perform urban growth analysis using NDBI if reflectance data becomes available.
-- Examine other environmental factors such as vegetation indices or temperature trends.
-
 ---
 
 ## How to Run
