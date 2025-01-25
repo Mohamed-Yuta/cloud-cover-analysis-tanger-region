@@ -57,35 +57,9 @@ plt.xlabel("Longitude")
 plt.ylabel("Latitude")
 plt.title("Landsat Scenes with Cloud Cover (Tanger Region)")
 plt.show()
-
 # Save the filtered data
 landsat_tanger_cleaned.to_csv("tanger_landsat_data.csv", index=False)
 print("Filtered data saved as 'tanger_landsat_data.csv'.")
-
-# Example: NDVI Calculation (if Red and NIR bands are available)
-red_column = "Red Band Reflectance"  # Replace with your actual column name
-nir_column = "NIR Band Reflectance"  # Replace with your actual column name
-
-if red_column in landsat_data.columns and nir_column in landsat_data.columns:
-    landsat_data["NDVI"] = (landsat_data[nir_column] - landsat_data[red_column]) / \
-                           (landsat_data[nir_column] + landsat_data[red_column])
-
-    # Plot NDVI for the Tanger region
-    plt.figure(figsize=(10, 6))
-    plt.scatter(
-        landsat_tanger_cleaned["Scene Center Longitude"],
-        landsat_tanger_cleaned["Scene Center Latitude"],
-        c=landsat_data["NDVI"],
-        cmap="RdYlGn",
-        s=50
-    )
-    plt.colorbar(label="NDVI")
-    plt.xlabel("Longitude")
-    plt.ylabel("Latitude")
-    plt.title("NDVI for Tanger Region")
-    plt.show()
-else:
-    print("NDVI cannot be calculated as Red and NIR bands are not available.")
 
 # Convert "Date Acquired" to datetime
 landsat_tanger_cleaned["Date Acquired"] = pd.to_datetime(landsat_tanger_cleaned["Date Acquired"])
@@ -103,5 +77,3 @@ plt.ylabel("Cloud Cover (%)")
 plt.grid(True)
 plt.show()
 
-landsat_tanger_cleaned["NDVI"] = (landsat_tanger_cleaned[nir_column] - landsat_tanger_cleaned[red_column]) / \
-                                 (landsat_tanger_cleaned[nir_column] + landsat_tanger_cleaned[red_column])
