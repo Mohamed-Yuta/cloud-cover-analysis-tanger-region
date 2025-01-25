@@ -65,13 +65,13 @@ Filtered the dataset to include only scenes within this bounding box.
 
 ## How to Run
 1. Place the Landsat CSV file (`landsat_ot_c2_l2_67952877dff0cdf1.csv`) in the `Data/` directory.
-2. Run the Python script (`test.py`) to preprocess the data and generate visualizations.
+2. Run the Python script (`cloud-cover.py`) to preprocess the data and generate visualizations.
 3. The filtered dataset will be saved as `tanger_landsat_data.csv` in the working directory.
 
 ---
 
 ## Files
-1. **`test.py`**: Python script for data preprocessing and visualization.
+1. **`cloud-cover.py`**: Python script for data preprocessing and visualization.
 2. **`landsat_ot_c2_l2_67952877dff0cdf1.csv`**: Original Landsat metadata.
 3. **`tanger_landsat_data.csv`**: Filtered dataset for the Tanger region.
 
